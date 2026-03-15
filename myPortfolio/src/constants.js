@@ -53,6 +53,7 @@ import webverLogo from './assets/work_logo/web_dig.png';
 import cmLogo from './assets/work_logo/cm.png';
 import imagesearchLogo from './assets/work_logo/image_search.png';
 import removebgLogo from './assets/work_logo/remove_bg.png';
+import barberqLogo from './assets/work_logo/project3.png';
 
 
 export const SkillsInfo = [
@@ -114,11 +115,20 @@ export const SkillsInfo = [
   },
   {
     id: 1,
-    role: "Backend Developer (Self Projects)",
+    role: "(Self Projects)",
     company: "Personal Projects",
     date: "2025 – Present",
     location: "Remote",
-    desc: "Collaborated in 2+ self projects, focusing on backend development. Participated in peer learning, code reviews, and debugging sessions to improve code quality.",
+    desc: "Collaborated in 5+ self projects, focusing on backend development. Participated in peer learning, code reviews, and debugging sessions to improve code quality.",
+    skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Collaboration"],
+  },
+  {
+    id: 2,
+    role: "Team Lead",
+    company: "Hostel Management System for IIIT Sricity",
+    date: "2025 – Present",
+    location: "Remote",
+    desc: "Developed a production-ready MERN-based hostel complaint system used by 1500+ students. Implemented role-based access control for caretakers, wardens, and chief wardens. Designed and optimized RESTful APIs.",
     skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Collaboration"],
   },
 ];
@@ -171,5 +181,16 @@ export const SkillsInfo = [
     tags: ["React JS", "Node.js", "AI Tools", "Image Processing", "SaaS"],
     github: "https://github.com/anuragkashyap302/QuickAI", // replace with your repo link
     webapp: "https://quick-ai-client-delta.vercel.app/", // replace with your live demo link
+  },
+  {
+    id: 2,
+    title: "BarberQ",
+    description:
+      "Full-stack MERN-based online barber booking platform enabling users to discover and book barbers by city, ratings, reviews, pricing, and availability with advanced search and filtering Implemented a dynamic booking system with real-time availability, instant confirmations, and secure payment gateway integration Developed an admin dashboard with automated email notifications for managing barbers, services, bookings, user feedback, and platform analytics.",
+ 
+    image: barberqLogo, // replace with your project logo or screenshot
+    tags: ["React JS", "Node.js", "Mongo-DB", "JWT", "Express.js" ,"Full Stack"],
+    github: "https://github.com/anuragkashyap302/BarberQ", // replace with your repo link
+    webapp: "https://barber-q-lemon.vercel.app/", // replace with your live demo link
   },
 ];

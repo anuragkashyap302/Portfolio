@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
@@ -10,14 +11,35 @@ import Footer from "./components/Footer/Footer";
 import BlurBlob from './components/BlurBlob';
 
 const App = () => {
-
-
   return (
-       <div className="bg-[#050414]">
+    <div className="bg-[#0a0e27] overflow-x-hidden relative">
+      {/* Animated background blobs */}
+      <motion.div
+        animate={{
+          y: [0, 30, 0],
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="fixed top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-600 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10 pointer-events-none"
+      />
 
-       <BlurBlob position={{ top: '35%', left: '20%' }} size={{ width: '30%', height: '40%' }} />
+      <motion.div
+        animate={{
+          y: [0, -30, 0],
+        }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="fixed bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-600 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-40 -z-10 pointer-events-none"
+      />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <motion.div
+        animate={{
+          y: [0, 20, 0],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="fixed top-1/3 right-1/4 w-80 h-80 bg-gradient-to-br from-pink-600 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-35 -z-10 pointer-events-none"
+      />
+
+      {/* Subtle grid background */}
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#4f4f4f0f_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f0f_1px,transparent_1px)] bg-[size:30px_30px] -z-9 pointer-events-none opacity-30" />
       
       <div className="relative pt-20">
         <Navbar />
@@ -29,9 +51,8 @@ const App = () => {
         <Contact />
         <Footer />
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
