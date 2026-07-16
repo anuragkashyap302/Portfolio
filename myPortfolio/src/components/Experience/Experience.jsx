@@ -58,7 +58,7 @@ const Experience = () => {
               <div className={`w-full md:w-5/12 ${isLeft ? "order-1" : "order-2"}`}>
                 <motion.div
                   whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 relative group overflow-hidden"
+                  className="bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 relative group overflow-hidden"
                 >
                   {/* Animated gradient border on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-100 p-[1px] -z-10 transition duration-300">
@@ -75,6 +75,8 @@ const Experience = () => {
                         <img
                           src={experience.img}
                           alt={experience.company}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                         />
                       </motion.div>
@@ -142,21 +144,17 @@ const Experience = () => {
                 viewport={{ once: true }}
                 className="z-10 flex items-center justify-center absolute left-1/2 transform -translate-x-1/2"
               >
-                <motion.div
-                  animate={{
-                    boxShadow: [
-                      "0 0 20px rgba(130, 69, 236, 0.5)",
-                      "0 0 40px rgba(130, 69, 236, 0.8)",
-                      "0 0 20px rgba(130, 69, 236, 0.5)",
-                    ],
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-purple-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg overflow-hidden"
+                  <motion.div
+                    animate={{ scale: [1, 1.05, 1], opacity: [0.9, 1, 0.9] }}
+                    transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+                    className="bg-gradient-to-br from-gray-800 to-gray-900 border-4 border-purple-500 w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg overflow-hidden"
                 >
                   {experience.img ? (
                     <img
                       src={experience.img}
                       alt={experience.company}
+                        loading="lazy"
+                        decoding="async"
                       className="w-full h-full object-cover"
                     />
                   ) : (

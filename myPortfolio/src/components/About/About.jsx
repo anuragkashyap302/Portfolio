@@ -104,7 +104,7 @@ const About = () => {
 
           {/* Profile Image with Tilt */}
           <Tilt
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[26rem] md:h-[26rem] rounded-full shadow-2xl relative z-10"
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[26rem] md:h-[26rem] rounded-full shadow-2xl relative z-10 overflow-hidden"
             tiltMaxAngleX={20}
             tiltMaxAngleY={20}
             perspective={1000}
@@ -113,16 +113,22 @@ const About = () => {
             gyroscope={true}
           >
             <motion.div
-              className="w-full h-full rounded-full border-4 border-transparent bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-1"
+              className="w-full h-full rounded-full border-4 border-transparent bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 p-[2px]"
               whileInView={{
                 boxShadow: "0 0 30px rgba(130, 69, 236, 0.6)",
               }}
             >
-              <img
-                src={profileImage}
-                alt="Anurag Kumar"
-                className="w-full h-full rounded-full object-cover shadow-lg"
-              />
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-[#0a0e27]">
+                <img
+                  src={profileImage}
+                  alt="Anurag Kumar"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  draggable="false"
+                  className="absolute inset-0 w-full h-full rounded-full object-cover scale-[1.66] shadow-lg select-none"
+                />
+              </div>
             </motion.div>
           </Tilt>
         </motion.div>

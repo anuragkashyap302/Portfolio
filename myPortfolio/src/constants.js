@@ -104,8 +104,17 @@ export const SkillsInfo = [
 ];
 
   export const experiences = [
-  {
+    {
     id: 0,
+    role: "Team Lead",
+    company: "Hostel Management System for IIIT Sricity",
+    date: "2025 – Present",
+    location: "Remote",
+    desc: "Developed a production-ready MERN-based hostel complaint system used by 1500+ students. Implemented role-based access control for caretakers, wardens, and chief wardens. Designed and optimized RESTful APIs.",
+    skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Collaboration"],
+  },
+  {
+    id: 1,
     role: "Team Lead (Academic Project)",
     company: "Smart Water Distribution System",
     date: "Aug 2024 – Dec 2024",
@@ -114,7 +123,7 @@ export const SkillsInfo = [
     skills: ["IoT", "Firebase", "Teamwork", "Hardware Integration"],
   },
   {
-    id: 1,
+    id: 2,
     role: "(Self Projects)",
     company: "Personal Projects",
     date: "2025 – Present",
@@ -122,15 +131,7 @@ export const SkillsInfo = [
     desc: "Collaborated in 5+ self projects, focusing on backend development. Participated in peer learning, code reviews, and debugging sessions to improve code quality.",
     skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Collaboration"],
   },
-  {
-    id: 2,
-    role: "Team Lead",
-    company: "Hostel Management System for IIIT Sricity",
-    date: "2025 – Present",
-    location: "Remote",
-    desc: "Developed a production-ready MERN-based hostel complaint system used by 1500+ students. Implemented role-based access control for caretakers, wardens, and chief wardens. Designed and optimized RESTful APIs.",
-    skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Collaboration"],
-  },
+  
 ];
   
  export const education = [
@@ -139,7 +140,7 @@ export const SkillsInfo = [
     img: iiitsLogo,
     school: "Indian Institute of Information Technology, Sri City",
     date: "Aug 2023 – Present",
-    grade: "8.44 CGPA",
+    grade: "8.51 CGPA",
     desc: "Pursuing a Bachelor of Technology (B.Tech) in Electronics and Communication Engineering. I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge",
     degree: "Bachelor of Technology - Electronics & Communication Engineering",
   },

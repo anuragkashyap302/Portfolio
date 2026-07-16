@@ -35,7 +35,7 @@ const Skills = () => (
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: categoryIdx * 0.1 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-gradient-to-br from-gray-900/60 to-gray-950/60 backdrop-blur-md px-6 sm:px-10 py-6 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white/10 hover:border-purple-400/30 shadow-lg hover:shadow-purple-500/20 transition duration-300 relative overflow-hidden group"
+          className="bg-gradient-to-br from-gray-900/60 to-gray-950/60 backdrop-blur-sm px-6 sm:px-10 py-6 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white/10 hover:border-purple-400/30 shadow-lg hover:shadow-purple-500/20 transition duration-300 relative overflow-hidden group"
         >
           {/* Category Title */}
           <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 text-center">
@@ -62,6 +62,8 @@ const Skills = () => (
                   <img
                     src={skill.logo}
                     alt={`${skill.name} logo`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-6 h-6 sm:w-7 sm:h-7"
                   />
                   <span className="text-xs sm:text-sm text-gray-200 font-medium">

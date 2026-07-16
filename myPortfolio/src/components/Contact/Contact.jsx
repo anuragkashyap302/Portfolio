@@ -92,7 +92,7 @@ const Contact = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-8 w-full max-w-md bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-white/10 relative group z-20"
+        className="mt-8 w-full max-w-md bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-white/10 relative group z-20"
       >
         {/* Animated gradient border on hover */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-100 p-[1px] -z-10 transition duration-300">

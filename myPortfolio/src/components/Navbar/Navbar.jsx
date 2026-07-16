@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaCode, FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -8,36 +8,47 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const isScrolledRef = useRef(false);
 
-  // Scroll detection
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntries = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        const currentSection = visibleEntries[0]?.target?.id;
+
+        if (currentSection) {
+          setActiveSection(currentSection);
+        }
+      },
+      {
+        rootMargin: "-25% 0px -60% 0px",
+        threshold: [0.15, 0.3, 0.5, 0.75],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const nextValue = window.scrollY > 50;
 
-      // Active section tracking - find which section has most visibility
-      const sections = document.querySelectorAll("section");
-      let current = "";
-      let maxVisibility = 0;
-      
-      sections.forEach((sec) => {
-        const rect = sec.getBoundingClientRect();
-        // Calculate how much of the section is visible on screen
-        const visibility = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-        
-        if (visibility > maxVisibility) {
-          maxVisibility = visibility;
-          current = sec.getAttribute("id");
-        }
-      });
-      
-      if (current) {
-        setActiveSection(current);
+      if (nextValue !== isScrolledRef.current) {
+        isScrolledRef.current = nextValue;
+        setIsScrolled(nextValue);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    // Call once on mount to set initial active section
     handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -133,7 +144,7 @@ const Navbar = () => {
               )}
               {/* Hover glow effect */}
               <motion.div
-                className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/0 to-pink-500/0 -z-10 opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/0 to-pink-500/0 -z-10 opacity-0 group-hover:opacity-100 pointer-events-none"
                 transition={{ duration: 0.3 }}
               />
             </motion.li>
@@ -157,7 +168,7 @@ const Navbar = () => {
               className="text-white transition drop-shadow-md hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.9)] relative group"
             >
               {/* Glow background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-0 group-hover:opacity-30 blur-lg -z-10 transition duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-0 group-hover:opacity-20 blur-md -z-10 transition duration-300 pointer-events-none" />
               {link.icon}
             </motion.a>
           ))}
@@ -197,7 +208,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 bg-gradient-to-b from-purple-600/60 via-pink-600/50 to-cyan-600/60 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
+          className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 bg-gradient-to-b from-purple-600/60 via-pink-600/50 to-cyan-600/60 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
         >
           <ul className="flex flex-col">
             {menuItems.map((item, idx) => (

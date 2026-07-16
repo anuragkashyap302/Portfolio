@@ -5,8 +5,27 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background: #0a0e27;
+  overflow-x: hidden;
+}
+
 html{
   scroll-behavior: smooth;
+}
+
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @layer utilities {
@@ -26,4 +45,21 @@ html{
 }
 .animate-float {
   animation: float 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  section {
+    content-visibility: visible;
+  }
 }

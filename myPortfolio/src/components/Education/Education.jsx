@@ -56,7 +56,7 @@ const Education = () => {
             {/* Education Card */}
             <motion.div
               whileHover={{ y: -10, scale: 1.02 }}
-              className={`w-full sm:w-[45%] p-6 sm:p-8 rounded-2xl backdrop-blur-xl bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-white/10 shadow-lg hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 relative group overflow-hidden ${
+              className={`w-full sm:w-[45%] p-6 sm:p-8 rounded-2xl backdrop-blur-md bg-gradient-to-br from-gray-900/80 to-gray-950/80 border border-white/10 shadow-lg hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 relative group overflow-hidden ${
                 index % 2 === 0 ? "sm:mr-auto" : "sm:ml-auto"
               }`}
             >
@@ -74,6 +74,8 @@ const Education = () => {
                   <img
                     src={edu.img}
                     alt={edu.school}
+                    loading="lazy"
+                    decoding="async"
                     className="w-14 h-14 object-cover"
                   />
                 </motion.div>
@@ -122,11 +124,8 @@ const Education = () => {
               {/* Decorative element */}
               <motion.div
                 className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-2xl -z-10"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{ duration: 4, repeat: Infinity }}
+                animate={{ scale: [1, 1.08, 1], opacity: [0.4, 0.7, 0.4] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
               />
             </motion.div>
 

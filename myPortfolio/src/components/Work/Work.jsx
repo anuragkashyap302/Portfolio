@@ -19,7 +19,7 @@ const Work = () => {
       id="work"
       className="relative py-24 px-[5vw] md:px-[7vw] lg:px-[12vw] font-sans"
     >
-      <div className="absolute -bottom-40 right-1/3 w-96 h-96 bg-gradient-to-tl from-purple-600 to-pink-900 rounded-full mix-blend-multiply filter blur-3xl opacity-25" />
+      <div className="absolute -bottom-40 right-1/3 w-80 h-80 bg-gradient-to-tl from-purple-600 to-pink-900 rounded-full mix-blend-multiply blur-2xl opacity-20 pointer-events-none" />
 
       {/* Section Title */}
       <motion.div
@@ -56,7 +56,7 @@ const Work = () => {
             variants={itemVariants}
             whileHover={{ y: -15 }}
             onClick={() => handleOpenModal(project)}
-            className="group bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl overflow-hidden cursor-pointer transition duration-300 relative"
+            className="group bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl overflow-hidden cursor-pointer transition duration-300 relative"
           >
             {/* Animated gradient border on hover */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-100 p-[1px] -z-10 transition duration-300">
@@ -68,6 +68,8 @@ const Work = () => {
               <motion.img
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover rounded-xl shadow-lg"
                 whileHover={{ scale: 1.1, rotate: 2 }}
                 transition={{ duration: 0.4 }}
@@ -159,6 +161,8 @@ const Work = () => {
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full object-contain rounded-xl shadow-2xl"
                   />
                 </motion.div>
