@@ -140,7 +140,7 @@ export const SkillsInfo = [
     img: iiitsLogo,
     school: "Indian Institute of Information Technology, Sri City",
     date: "Aug 2023 – Present",
-    grade: "8.51 CGPA",
+    grade: "8.69 CGPA",
     desc: "Pursuing a Bachelor of Technology (B.Tech) in Electronics and Communication Engineering. I gained a strong foundation in programming, software development, and computer science principles. I have studied courses such as Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Web Development, and Software Engineering. I actively participated in various workshops and technical events, which enhanced my skills and knowledge",
     degree: "Bachelor of Technology - Electronics & Communication Engineering",
   },
