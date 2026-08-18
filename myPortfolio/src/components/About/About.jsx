@@ -126,7 +126,8 @@ const About = () => {
                   fetchPriority="high"
                   decoding="async"
                   draggable="false"
-                  className="absolute inset-0 w-full h-full rounded-full object-cover scale-[1.66] shadow-lg select-none"
+                  className="absolute inset-0 w-full h-full rounded-full object-cover shadow-lg select-none"
+                  style={{ objectPosition: "center 18%", transform: "scale(1.12)" }}
                 />
               </div>
             </motion.div>

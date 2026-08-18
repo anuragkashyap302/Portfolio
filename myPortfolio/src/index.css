@@ -14,13 +14,13 @@ body {
   overflow-x: hidden;
 }
 
-html{
-  scroll-behavior: smooth;
+html {
+  scroll-behavior: auto;
 }
 
 section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 900px;
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
 }
 
 img {
