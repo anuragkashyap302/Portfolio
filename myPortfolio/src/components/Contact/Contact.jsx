@@ -1,30 +1,26 @@
-
 import { ToastContainer, toast } from "react-toastify";
 import React, { useRef, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "../../utils/motionVariants";
 
 const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
-  const [focusedField, setFocusedField] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_39b7kei",  // Replace with your EmailJS Service ID
-        "template_b562fk4",  // Replace with your EmailJS Template ID
+        "service_39b7kei",
+        "template_b562fk4",
         form.current,
-        "CH2htUUHR-QwzqR9K"  // Replace with your EmailJS Public Key
+        "CH2htUUHR-QwzqR9K"
       )
       .then(
         () => {
           setIsSent(true);
-          form.current.reset(); // Reset form fields after sending
+          form.current.reset();
           toast.success("Message sent successfully! ✅", {
             position: "top-right",
             autoClose: 3000,
@@ -51,154 +47,66 @@ const Contact = () => {
   };
 
   const formFields = [
-    { name: "user_email", placeholder: "Your Email", type: "email", icon: "✉️" },
-    { name: "user_name", placeholder: "Your Name", type: "text", icon: "👤" },
-    { name: "subject", placeholder: "Subject", type: "text", icon: "📝" },
+    { name: "user_email", placeholder: "Your Email", type: "email" },
+    { name: "user_name", placeholder: "Your Name", type: "text" },
+    { name: "subject", placeholder: "Subject", type: "text" },
   ];
 
   return (
     <section
       id="contact"
-      className="relative flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans z-10"
+      className="relative flex flex-col items-center justify-center py-20 px-[12vw] md:px-[7vw] lg:px-[20vw]"
     >
-
-      {/* Toast Container */}
       <ToastContainer />
 
-      {/* Section Title */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-center mb-16 relative z-10"
-      >
-        <h2 className="text-4xl font-black text-white mb-2">CONTACT</h2>
-        <motion.div
-          animate={{
-            scaleX: [0, 1, 1, 0],
-          }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4 origin-left"
-        />
-        <p className="text-gray-400 mt-4 text-lg font-semibold">
-          I'd love to hear from you—reach out for any opportunities or questions!
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-foam">Contact</h2>
+        <div className="w-16 h-[2px] bg-copper mx-auto mt-3" />
+        <p className="text-mist mt-4 text-base">
+          I would love to hear from you—reach out for any opportunities or questions.
         </p>
-      </motion.div>
+      </div>
 
-      {/* Contact Form */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="mt-8 w-full max-w-md bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-white/10 relative group z-20"
-      >
-        {/* Animated gradient border on hover */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/0 via-pink-500/0 to-cyan-500/0 opacity-0 group-hover:opacity-100 p-[1px] -z-10 transition duration-300">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-950/80" />
-        </div>
-
-        {/* Header */}
-        <motion.h3
-          variants={itemVariants}
-          className="text-2xl font-bold text-white text-center mb-2"
-        >
+      <div className="surface w-full max-w-md p-8 rounded-xl">
+        <h3 className="text-xl font-semibold text-foam text-center mb-2">
           Connect With Me
-          <span className="ml-2 inline-block">🚀</span>
-        </motion.h3>
-        <motion.p
-          variants={itemVariants}
-          className="text-gray-400 text-center text-sm mb-6"
-        >
-          Send me a message and I'll respond as soon as possible
-        </motion.p>
+        </h3>
+        <p className="text-mist text-center text-sm mb-6">
+          Send me a message and I will respond as soon as possible
+        </p>
 
-        <form ref={form} onSubmit={sendEmail} className="mt-4 flex flex-col space-y-4">
-          {/* Input Fields */}
-          {formFields.map((field, idx) => (
-            <motion.div
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-4">
+          {formFields.map((field) => (
+            <input
               key={field.name}
-              variants={itemVariants}
-              className="relative"
-            >
-              <motion.input
-                type={field.type}
-                name={field.name}
-                placeholder={field.placeholder}
-                required
-                onFocus={() => setFocusedField(field.name)}
-                onBlur={() => setFocusedField(null)}
-                whileFocus={{ scale: 1.02 }}
-                className="w-full p-4 pl-12 rounded-lg bg-white/5 backdrop-blur-sm text-white border-2 border-white/10 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/30 transition-all duration-300 placeholder-gray-500"
-              />
-              <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-xl">
-                {field.icon}
-              </span>
-              {focusedField === field.name && (
-                <motion.div
-                  layoutId="focusGlow"
-                  className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/0 to-pink-500/0 pointer-events-none"
-                />
-              )}
-            </motion.div>
-          ))}
-
-          {/* Message Textarea */}
-          <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
-            <motion.textarea
-              name="message"
-              placeholder="Message"
-              rows="4"
+              type={field.type}
+              name={field.name}
+              placeholder={field.placeholder}
               required
-              onFocus={() => setFocusedField("message")}
-              onBlur={() => setFocusedField(null)}
-              whileFocus={{ scale: 1.02 }}
-              className="w-full p-4 pl-12 rounded-lg bg-white/5 backdrop-blur-sm text-white border-2 border-white/10 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/30 transition-all duration-300 placeholder-gray-500 resize-none"
+              className="w-full p-3 rounded-md bg-ink text-foam border border-line focus:border-copper focus:outline-none placeholder-mist"
             />
-            <span className="absolute left-4 top-4 text-xl">💬</span>
-          </motion.div>
-
-          {/* Send Button */}
-          <motion.button
+          ))}
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="4"
+            required
+            className="w-full p-3 rounded-md bg-ink text-foam border border-line focus:border-copper focus:outline-none placeholder-mist resize-none"
+          />
+          <button
             type="submit"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 py-4 text-white font-bold rounded-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 relative overflow-hidden group mt-6"
+            className="w-full bg-copper py-3 text-ink font-semibold rounded-md hover:bg-copper-dark transition-colors mt-2 shadow-[0_8px_24px_rgba(232,168,124,0.3)]"
           >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100"
-              animate={{ x: ["-100%", "100%"] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="relative z-10 flex items-center justify-center">
-              Send Message
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="ml-2"
-              >
-                ✉️
-              </motion.span>
-            </span>
-          </motion.button>
+            Send Message
+          </button>
         </form>
 
-        {/* Success Message */}
         {isSent && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mt-4 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-sm text-center"
-          >
-            Thanks for reaching out! I'll get back to you soon.
-          </motion.div>
+          <div className="mt-4 p-3 bg-copper/10 border border-copper/40 rounded-md text-copper text-sm text-center">
+            Thanks for reaching out! I will get back to you soon.
+          </div>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 };

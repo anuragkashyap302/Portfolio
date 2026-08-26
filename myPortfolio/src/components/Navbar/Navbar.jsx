@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaCode, FaGithub, FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { floatingAnimation } from "../../utils/motionVariants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +50,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll
   const handleMenuItemClick = (sectionId) => {
     setActiveSection(sectionId);
     setIsOpen(false);
@@ -65,172 +62,112 @@ const Navbar = () => {
   const menuItems = [
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
     { id: "work", label: "Projects" },
+    { id: "experience", label: "Experience" },
     { id: "education", label: "Education" },
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 w-full z-50 transition-all duration-700 px-[7vw] md:px-[7vw] lg:px-[20vw]`}
-    >
-      {/* Premium Gradient Background with Glassmorphism */}
+    <nav className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6">
       <div
-        className={`absolute inset-0 -z-10 transition-all duration-700 ${
+        className={`mx-auto max-w-5xl flex items-center justify-between gap-3 rounded-full border px-3 sm:px-5 py-2.5 backdrop-blur-xl transition-shadow duration-300 ${
           isScrolled
-            ? "backdrop-blur-2xl bg-gradient-to-r from-purple-600/50 via-pink-600/40 to-cyan-600/50 border-b border-white/10 shadow-2xl shadow-purple-500/20"
-            : "backdrop-blur-lg bg-gradient-to-r from-purple-600/30 via-pink-600/25 to-cyan-600/30 border-b border-white/5"
+            ? "bg-ink/80 border-copper/25 shadow-[0_12px_40px_rgba(232,168,124,0.16)]"
+            : "bg-panel/70 border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.35)]"
         }`}
-      />
-
-      {/* Animated gradient line */}
-      <motion.div
-        className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-50"
-        animate={{
-          opacity: isScrolled ? [0.5, 1, 0.5] : [0.3, 0.5, 0.3],
-        }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
-
-      <div className="text-white py-5 flex justify-between items-center relative">
-        {/* Logo with Animation */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          animate={floatingAnimation.animate}
-          className="text-xl font-extrabold tracking-wide cursor-pointer select-none drop-shadow-lg"
+      >
+        <button
+          type="button"
+          onClick={() => handleMenuItemClick("about")}
+          className="shrink-0 rounded-full px-3 py-1 text-sm sm:text-base font-semibold tracking-wide text-foam"
         >
-          <span className="text-white">&lt;</span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-pink-500 font-black text-2xl">
-            Anurag
-          </span>
-          <span className="text-white">/</span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-500 font-black text-2xl">
-            Kumar
-          </span>
-          <span className="text-white">&gt;</span>
-        </motion.div>
+          <span className="text-copper">&lt;</span>
+          Anurag
+          <span className="text-copper"> / </span>
+          Kumar
+          <span className="text-copper">&gt;</span>
+        </button>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-10 text-white font-medium">
-          {menuItems.map((item, idx) => (
-            <motion.li
-              key={item.id}
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative group cursor-pointer"
-            >
+        <ul className="hidden lg:flex items-center gap-1 text-sm font-medium">
+          {menuItems.map((item) => (
+            <li key={item.id}>
               <button
+                type="button"
                 onClick={() => handleMenuItemClick(item.id)}
-                className={`transition duration-300 relative text-sm font-semibold pb-2 ${
+                className={`rounded-full px-3.5 py-1.5 transition-colors duration-200 ${
                   activeSection === item.id
-                    ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-pink-500 drop-shadow-[0_0_12px_rgba(236,72,153,0.9)]"
-                    : "text-gray-300 hover:text-white"
+                    ? "bg-copper text-ink shadow-[0_6px_18px_rgba(232,168,124,0.35)]"
+                    : "text-mist hover:text-foam hover:bg-white/5"
                 }`}
               >
                 {item.label}
               </button>
-              {/* animated underline */}
-              {activeSection === item.id && (
-                <motion.span
-                  layoutId="underline"
-                  className="absolute left-0 bottom-0 h-[3px] w-full rounded-full bg-gradient-to-r from-purple-400 via-pink-400 to-pink-500 shadow-[0_0_15px_rgba(236,72,153,1)]"
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              {/* Hover glow effect */}
-              <motion.div
-                className="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500/0 to-pink-500/0 -z-10 opacity-0 group-hover:opacity-100 pointer-events-none"
-                transition={{ duration: 0.3 }}
-              />
-            </motion.li>
+            </li>
           ))}
         </ul>
 
-        {/* Social Icons */}
-        <div className="hidden md:flex space-x-6">
-          {[
-            { href: "https://github.com/anuragkashyap302", icon: <FaGithub size={24} /> },
-            { href: "https://www.linkedin.com/in/anurag-kumar-5b1132338/", icon: <FaLinkedin size={24} /> },
-            { href: "https://leetcode.com/u/anuragkashyap302/", icon: <FaCode size={24} /> },
-          ].map((link, i) => (
-            <motion.a
-              key={i}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.4, rotate: 15 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-white transition drop-shadow-md hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.9)] relative group"
-            >
-              {/* Glow background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-0 group-hover:opacity-20 blur-md -z-10 transition duration-300 pointer-events-none" />
-              {link.icon}
-            </motion.a>
-          ))}
+        <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-ink/40 px-2 py-1">
+          <a
+            href="https://github.com/anuragkashyap302"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full p-2 text-mist hover:text-copper hover:bg-white/5 transition-colors"
+            aria-label="GitHub"
+          >
+            <FaGithub size={16} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anurag-kumar-5b1132338/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full p-2 text-mist hover:text-copper hover:bg-white/5 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin size={16} />
+          </a>
+          <a
+            href="https://leetcode.com/u/anuragkashyap302/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full p-2 text-mist hover:text-copper hover:bg-white/5 transition-colors"
+            aria-label="LeetCode"
+          >
+            <FaCode size={16} />
+          </a>
         </div>
 
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden">
-          {isOpen ? (
-            <motion.div
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-            >
-              <FiX
-                className="text-3xl text-white cursor-pointer drop-shadow-lg"
-                onClick={() => setIsOpen(false)}
-              />
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-            >
-              <FiMenu
-                className="text-3xl text-white cursor-pointer drop-shadow-lg"
-                onClick={() => setIsOpen(true)}
-              />
-            </motion.div>
-          )}
-        </div>
+        <button
+          type="button"
+          className="lg:hidden rounded-full p-2 text-foam hover:bg-white/5"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-full left-0 right-0 mt-2 mx-4 bg-gradient-to-b from-purple-600/60 via-pink-600/50 to-cyan-600/60 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
-        >
-          <ul className="flex flex-col">
-            {menuItems.map((item, idx) => (
-              <motion.li
-                key={item.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: idx * 0.05 }}
-                className="border-b border-white/10 last:border-b-0"
-              >
+        <div className="lg:hidden mx-auto mt-3 max-w-5xl rounded-2xl border border-white/10 bg-panel/95 backdrop-blur-xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.45)]">
+          <ul className="flex flex-col p-2">
+            {menuItems.map((item) => (
+              <li key={item.id}>
                 <button
+                  type="button"
                   onClick={() => handleMenuItemClick(item.id)}
-                  className="w-full text-left px-6 py-4 text-white font-medium hover:bg-white/10 transition"
+                  className={`w-full text-left rounded-xl px-4 py-3 transition-colors ${
+                    activeSection === item.id
+                      ? "bg-copper/15 text-copper"
+                      : "text-foam hover:bg-white/5"
+                  }`}
                 >
                   {item.label}
                 </button>
-              </motion.li>
+              </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       )}
-    </motion.nav>
+    </nav>
   );
 };
 
