@@ -46,14 +46,9 @@ import rvmLogo from './assets/education_logo/vps_logo.png';
 // Project Section Logo's
 import quickstayLogo from './assets/work_logo/project2.png';
 import aisaasLogo from './assets/work_logo/project1.png';
-import movierecLogo from './assets/work_logo/movie_rec.png';
-import taskremLogo from './assets/work_logo/task_rem.png';
-import npmLogo from './assets/work_logo/npm.png';
-import webverLogo from './assets/work_logo/web_dig.png';
-import cmLogo from './assets/work_logo/cm.png';
-import imagesearchLogo from './assets/work_logo/image_search.png';
-import removebgLogo from './assets/work_logo/remove_bg.png';
 import barberqLogo from './assets/work_logo/project3.png';
+import pingupLogo from './assets/work_logo/project4.png';
+import hospitalmanagementLogo from './assets/work_logo/project5.png';
 
 
 export const SkillsInfo = [
@@ -122,15 +117,7 @@ export const SkillsInfo = [
     desc: "Led a team to build a Smart Water Distribution system using IoT devices. Coordinated hardware integration and real-time data management using Firebase.",
     skills: ["IoT", "Firebase", "Teamwork", "Hardware Integration"],
   },
-  {
-    id: 2,
-    role: "(Self Projects)",
-    company: "Personal Projects",
-    date: "2025 – Present",
-    location: "Remote",
-    desc: "Collaborated in 5+ self projects, focusing on backend development. Participated in peer learning, code reviews, and debugging sessions to improve code quality.",
-    skills: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Collaboration"],
-  },
+ 
   
 ];
   
@@ -165,33 +152,52 @@ export const SkillsInfo = [
   export const projects = [
   {
     id: 0,
-    title: "QuickStay – Hotel Booking Website",
+    title: "PingUp",
     description:
-      "A full-stack platform that allows users to register hotels and book rooms seamlessly. Features include hotel registration, room booking system, and a fully responsive user interface. Built using the MERN stack for scalability and performance.",
-    image: quickstayLogo, // replace with your project logo or screenshot
-    tags: ["MongoDB", "Express.js", "React", "Node.js", "Full Stack"],
-    github: "https://github.com/anuragkashyap302/HOTEL-BOOKING", // replace with your repo link
-    webapp: "https://quickstay-dusky-kappa.vercel.app/", // replace with your live demo link
+      "A full-stack social media platform with secure authentication, profile management, and a scalable client-server architecture. Includes real-time messaging, posts, stories, follow/unfollow, friend requests, user search, and personalized news feeds, plus optimized media storage and background job processing.",
+    image: pingupLogo,
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Clerk", "Inngest", "ImageKit"],
+    github: "https://github.com/anuragkashyap302/PingUp",
+    webapp: "https://pingit-up.vercel.app/",
   },
   {
     id: 1,
-    title: "AI-SAAS – AI-Powered Content & Image Tool",
+    title: "MediCare",
     description:
-      "An AI-powered SaaS platform for creators to generate articles, blogs, and images, as well as remove backgrounds and objects. Integrated multiple AI tools into a modern React-based UI with powerful backend services.",
-    image: aisaasLogo, // replace with your project logo or screenshot
-    tags: ["React JS", "Node.js", "AI Tools", "Image Processing", "SaaS"],
-    github: "https://github.com/anuragkashyap302/QuickAI", // replace with your repo link
-    webapp: "https://quick-ai-client-delta.vercel.app/", // replace with your live demo link
+      "A full-stack hospital management system for patients, doctors, staff, and admins with role-based access. Covers appointment scheduling, healthcare service booking, doctor and department management, and patient records through REST APIs and responsive dashboards.",
+    image: hospitalmanagementLogo,
+    tags: ["React JS", "Node.js", "MongoDB", "JWT", "Express.js", "Full Stack"],
+    github: "https://github.com/anuragkashyap302/MediCare",
+    webapp: "https://medicare-frontend-8miz.onrender.com/",
   },
   {
     id: 2,
     title: "BarberQ",
     description:
-      "Full-stack MERN-based online barber booking platform enabling users to discover and book barbers by city, ratings, reviews, pricing, and availability with advanced search and filtering Implemented a dynamic booking system with real-time availability, instant confirmations, and secure payment gateway integration Developed an admin dashboard with automated email notifications for managing barbers, services, bookings, user feedback, and platform analytics.",
- 
-    image: barberqLogo, // replace with your project logo or screenshot
-    tags: ["React JS", "Node.js", "Mongo-DB", "JWT", "Express.js" ,"Full Stack"],
-    github: "https://github.com/anuragkashyap302/BarberQ", // replace with your repo link
-    webapp: "https://barber-q-lemon.vercel.app/", // replace with your live demo link
+      "A MERN barber booking platform for discovering barbers by city, ratings, reviews, pricing, and availability. Includes real-time booking, secure payments, and an admin dashboard with email notifications for barbers, services, bookings, and analytics.",
+    image: barberqLogo,
+    tags: ["React JS", "Node.js", "MongoDB", "JWT", "Express.js", "Full Stack"],
+    github: "https://github.com/anuragkashyap302/BarberQ",
+    webapp: "https://barber-q-lemon.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "QuickStay – Hotel Booking Website",
+    description:
+      "A full-stack platform that allows users to register hotels and book rooms seamlessly. Features include hotel registration, room booking, and a fully responsive interface built with the MERN stack.",
+    image: quickstayLogo,
+    tags: ["MongoDB", "Express.js", "React", "Node.js", "Full Stack"],
+    github: "https://github.com/anuragkashyap302/HOTEL-BOOKING",
+    webapp: "https://quickstay-dusky-kappa.vercel.app/",
+  },
+  {
+    id: 4,
+    title: "AI-SAAS – AI-Powered Content & Image Tool",
+    description:
+      "An AI-powered SaaS platform for creators to generate articles, blogs, and images, as well as remove backgrounds and objects. Multiple AI tools sit behind a modern React UI and a production backend.",
+    image: aisaasLogo,
+    tags: ["React JS", "Node.js", "AI Tools", "Image Processing", "SaaS"],
+    github: "https://github.com/anuragkashyap302/QuickAI",
+    webapp: "https://quick-ai-client-delta.vercel.app/",
   },
 ];

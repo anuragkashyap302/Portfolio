@@ -50,7 +50,7 @@ img {
   left: -6rem;
   width: 22rem;
   height: 22rem;
-  background: rgba(232, 168, 124, 0.22);
+  background: radial-gradient(circle, rgba(244, 208, 168, 0.35), rgba(232, 168, 124, 0.08) 70%);
   animation: blobDrift 18s ease-in-out infinite;
 }
 
@@ -59,7 +59,7 @@ img {
   right: -4rem;
   width: 24rem;
   height: 24rem;
-  background: rgba(180, 83, 9, 0.18);
+  background: radial-gradient(circle, rgba(212, 137, 90, 0.28), rgba(180, 83, 9, 0.08) 70%);
   animation: blobDrift 22s ease-in-out infinite reverse;
 }
 
@@ -68,7 +68,7 @@ img {
   left: 55%;
   width: 16rem;
   height: 16rem;
-  background: rgba(245, 158, 11, 0.1);
+  background: radial-gradient(circle, rgba(255, 186, 120, 0.18), transparent 70%);
   animation: blobDrift 16s ease-in-out infinite;
 }
 
@@ -82,20 +82,83 @@ img {
   }
 }
 
-.surface {
-  background: #1c1917;
-  border: 1px solid #3f3a36;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.title-3d {
+  background: linear-gradient(180deg, #fff8ef 0%, #f4d0a8 38%, #e8a87c 68%, #b86a3a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 10px 18px rgba(232, 168, 124, 0.28));
 }
 
-.surface:hover {
+.accent-line {
+  width: 4.5rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f8e1c4, #e8a87c, #b86a3a);
+  box-shadow: 0 6px 16px rgba(232, 168, 124, 0.45);
+}
+
+.card-3d {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 28%),
+    linear-gradient(145deg, #241f1c 0%, #161311 100%);
+  border: 1px solid rgba(244, 208, 168, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 10px 24px rgba(232, 168, 124, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(248, 225, 196, 0.18), transparent 42%);
+}
+
+.card-3d:hover {
   border-color: rgba(232, 168, 124, 0.45);
-  box-shadow: 0 18px 48px rgba(232, 168, 124, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 24px 50px rgba(0, 0, 0, 0.5),
+    0 14px 30px rgba(232, 168, 124, 0.18);
+}
+
+.btn-3d {
+  background: linear-gradient(180deg, #f4d0a8 0%, #e8a87c 48%, #d4895a 100%);
+  color: #0c0a09;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 10px 22px rgba(232, 168, 124, 0.35);
+}
+
+.btn-3d:hover {
+  background: linear-gradient(180deg, #f8e1c4 0%, #e8a87c 55%, #c57a4e 100%);
+}
+
+.grade-3d {
+  background: linear-gradient(180deg, #f8e1c4, #e8a87c 55%, #b86a3a);
+  color: #0c0a09;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 8px 18px rgba(232, 168, 124, 0.3);
+}
+
+.timeline-rail {
+  background: linear-gradient(180deg, #f4d0a8, #e8a87c, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .blob {
     animation: none;
+  }
+
+  .card-3d {
+    transition: none;
   }
 }

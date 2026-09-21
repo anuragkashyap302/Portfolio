@@ -4,11 +4,11 @@ import { SkillsInfo } from "../../constants";
 const Skills = () => (
   <section
     id="skills"
-    className="relative py-20 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+    className="relative py-16 sm:py-20 px-5 sm:px-[7vw] lg:px-[20vw]"
   >
     <div className="text-center mb-12">
-      <h2 className="text-3xl sm:text-4xl font-bold text-foam">Skills</h2>
-      <div className="w-16 h-[2px] bg-copper mx-auto mt-3" />
+      <h2 className="title-3d text-3xl sm:text-4xl font-bold">Skills</h2>
+      <div className="accent-line" />
       <p className="text-mist mt-4 text-base max-w-2xl mx-auto">
         A collection of my technical skills and expertise honed through various projects and experiences
       </p>
@@ -18,7 +18,7 @@ const Skills = () => (
       {SkillsInfo.map((category) => (
         <div
           key={category.title}
-          className="surface px-6 py-6 mb-4 w-full sm:w-[48%] rounded-xl"
+          className="card-3d px-5 sm:px-6 py-6 mb-2 w-full lg:w-[48%] rounded-2xl"
         >
           <h3 className="text-xl font-semibold text-foam mb-5 text-center">
             {category.title}

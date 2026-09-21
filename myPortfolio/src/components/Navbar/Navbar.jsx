@@ -96,7 +96,7 @@ const Navbar = () => {
                 onClick={() => handleMenuItemClick(item.id)}
                 className={`rounded-full px-3.5 py-1.5 transition-colors duration-200 ${
                   activeSection === item.id
-                    ? "bg-copper text-ink shadow-[0_6px_18px_rgba(232,168,124,0.35)]"
+                    ? "btn-3d"
                     : "text-mist hover:text-foam hover:bg-white/5"
                 }`}
               >

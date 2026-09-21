@@ -26,7 +26,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative text-foam py-12 px-[12vw] md:px-[7vw] lg:px-[20vw] border-t border-line">
+    <footer className="relative text-foam py-12 px-5 sm:px-[7vw] lg:px-[20vw] border-t border-line">
       <div className="container mx-auto text-center">
         <h2 className="text-2xl font-bold text-foam">
           Anurag <span className="text-copper">Kumar</span>
@@ -67,7 +67,7 @@ const Footer = () => {
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mt-6 px-5 py-2 border border-copper text-copper font-medium rounded-full hover:bg-copper/10 transition-colors text-sm"
+          className="btn-3d mt-6 px-5 py-2 font-medium rounded-full text-sm"
         >
           Back to Top
         </button>

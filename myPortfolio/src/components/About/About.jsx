@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative py-12 px-[7vw] md:px-[7vw] lg:px-[20vw]"
+      className="relative py-10 sm:py-12 px-5 sm:px-[7vw] lg:px-[20vw]"
     >
       <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-14">
         <div className="md:w-[52%] text-center md:text-left">
@@ -42,14 +42,14 @@ const About = () => {
             href="https://drive.google.com/file/d/1Wk-BR9SPekK26dd3nuB0U8GFTS6-B8Cd/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-8 text-ink bg-copper hover:bg-copper-dark py-3 px-7 rounded-full text-sm font-semibold tracking-wide transition-colors shadow-[0_10px_28px_rgba(232,168,124,0.35)]"
+            className="btn-3d inline-block mt-8 py-3 px-7 rounded-full text-sm font-semibold tracking-wide"
           >
             Download Resume
           </a>
         </div>
 
         <div className="md:w-[48%] flex justify-center md:justify-end">
-          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-[3px] bg-copper shadow-[0_16px_50px_rgba(232,168,124,0.35)]">
+          <div className="w-44 h-44 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-[3px] bg-gradient-to-br from-[#f8e1c4] via-[#e8a87c] to-[#8b5a3c] shadow-[0_16px_50px_rgba(232,168,124,0.35)]">
             <div className="relative w-full h-full rounded-full overflow-hidden bg-ink">
               <img
                 src={profileImage}

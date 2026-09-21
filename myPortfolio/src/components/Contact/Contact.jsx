@@ -55,19 +55,19 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative flex flex-col items-center justify-center py-20 px-[12vw] md:px-[7vw] lg:px-[20vw]"
+      className="relative flex flex-col items-center justify-center py-16 sm:py-20 px-5 sm:px-[7vw] lg:px-[20vw]"
     >
       <ToastContainer />
 
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-foam">Contact</h2>
-        <div className="w-16 h-[2px] bg-copper mx-auto mt-3" />
+        <h2 className="title-3d text-3xl sm:text-4xl font-bold">Contact</h2>
+        <div className="accent-line" />
         <p className="text-mist mt-4 text-base">
           I would love to hear from you—reach out for any opportunities or questions.
         </p>
       </div>
 
-      <div className="surface w-full max-w-md p-8 rounded-xl">
+      <div className="card-3d w-full max-w-md p-6 sm:p-8 rounded-2xl">
         <h3 className="text-xl font-semibold text-foam text-center mb-2">
           Connect With Me
         </h3>
@@ -95,7 +95,7 @@ const Contact = () => {
           />
           <button
             type="submit"
-            className="w-full bg-copper py-3 text-ink font-semibold rounded-md hover:bg-copper-dark transition-colors mt-2 shadow-[0_8px_24px_rgba(232,168,124,0.3)]"
+            className="btn-3d w-full py-3 font-semibold rounded-xl mt-2"
           >
             Send Message
           </button>
