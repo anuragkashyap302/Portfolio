@@ -209,7 +209,7 @@ export const SkillsInfo = [
     title: "DIGITAL HEROES-A Golf Performance and Charity Draw Platform",
     description:
       "A golf performance and charity draw platform that allows users to track their golf performance, participate in charity draws, and win prizes.",
-    image: aisaasLogo,
+    image: digitalheroesLogo,
     tags: ["React JS", "Node.js", "Supabase", "Postgres", "Tailwind CSS", "Stripe"],
     github: "hhttps://github.com/anuragkashyap302/Digital-Heroes",
     webapp: "https://digital-heroes-anurag.vercel.app/",
