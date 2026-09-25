@@ -44,11 +44,12 @@ import nhsLogo from './assets/education_logo/bsa_logo.png';
 import rvmLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
-import quickstayLogo from './assets/work_logo/project2.png';
-import aisaasLogo from './assets/work_logo/project1.png';
-import barberqLogo from './assets/work_logo/project3.png';
-import pingupLogo from './assets/work_logo/project4.png';
+import quickstayLogo from './assets/work_logo/project4.png';
+import aisaasLogo from './assets/work_logo/project2.png';
+import barberqLogo from './assets/work_logo/project1.png';
+import pingupLogo from './assets/work_logo/project3.png';
 import hospitalmanagementLogo from './assets/work_logo/project5.png';
+import digitalheroesLogo from './assets/work_logo/project6.png';
 
 
 export const SkillsInfo = [
@@ -150,8 +151,28 @@ export const SkillsInfo = [
 ];
   
   export const projects = [
+    {
+      id: 0,
+      title: "BarberQ",
+      description:
+        "A MERN barber booking platform for discovering barbers by city, ratings, reviews, pricing, and availability. Includes real-time booking, secure payments, and an admin dashboard with email notifications for barbers, services, bookings, and analytics.",
+      image: barberqLogo,
+      tags: ["React JS", "Node.js", "MongoDB", "JWT", "Express.js", "Full Stack"],
+      github: "https://github.com/anuragkashyap302/BarberQ",
+      webapp: "https://barber-q-lemon.vercel.app/",
+    },
+    {
+      id: 1,
+      title: "AI-SAAS – AI-Powered Content & Image Tool",
+      description:
+        "An AI-powered SaaS platform for creators to generate articles, blogs, and images, as well as remove backgrounds and objects. Multiple AI tools sit behind a modern React UI and a production backend.",
+      image: aisaasLogo,
+      tags: ["React JS", "Node.js", "AI Tools", "Google-Gemini", "Clip-Drop", "ImageKit", "SaaS"],
+      github: "https://github.com/anuragkashyap302/QuickAI",
+      webapp: "https://quick-ai-client-delta.vercel.app/",
+    },
   {
-    id: 0,
+    id: 2,
     title: "PingUp",
     description:
       "A full-stack social media platform with secure authentication, profile management, and a scalable client-server architecture. Includes real-time messaging, posts, stories, follow/unfollow, friend requests, user search, and personalized news feeds, plus optimized media storage and background job processing.",
@@ -159,26 +180,6 @@ export const SkillsInfo = [
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Clerk", "Inngest", "ImageKit"],
     github: "https://github.com/anuragkashyap302/PingUp",
     webapp: "https://pingit-up.vercel.app/",
-  },
-  {
-    id: 1,
-    title: "MediCare",
-    description:
-      "A full-stack hospital management system for patients, doctors, staff, and admins with role-based access. Covers appointment scheduling, healthcare service booking, doctor and department management, and patient records through REST APIs and responsive dashboards.",
-    image: hospitalmanagementLogo,
-    tags: ["React JS", "Node.js", "MongoDB", "JWT", "Express.js", "Full Stack"],
-    github: "https://github.com/anuragkashyap302/MediCare",
-    webapp: "https://medicare-frontend-8miz.onrender.com/",
-  },
-  {
-    id: 2,
-    title: "BarberQ",
-    description:
-      "A MERN barber booking platform for discovering barbers by city, ratings, reviews, pricing, and availability. Includes real-time booking, secure payments, and an admin dashboard with email notifications for barbers, services, bookings, and analytics.",
-    image: barberqLogo,
-    tags: ["React JS", "Node.js", "MongoDB", "JWT", "Express.js", "Full Stack"],
-    github: "https://github.com/anuragkashyap302/BarberQ",
-    webapp: "https://barber-q-lemon.vercel.app/",
   },
   {
     id: 3,
@@ -192,12 +193,25 @@ export const SkillsInfo = [
   },
   {
     id: 4,
-    title: "AI-SAAS – AI-Powered Content & Image Tool",
+    title: "MediCare",
     description:
-      "An AI-powered SaaS platform for creators to generate articles, blogs, and images, as well as remove backgrounds and objects. Multiple AI tools sit behind a modern React UI and a production backend.",
+      "A full-stack hospital management system for patients, doctors, staff, and admins with role-based access. Covers appointment scheduling, healthcare service booking, doctor and department management, and patient records through REST APIs and responsive dashboards.",
+    image: hospitalmanagementLogo,
+    tags: ["React JS", "Node.js", "MongoDB", "JWT", "Express.js", "Full Stack"],
+    github: "https://github.com/anuragkashyap302/MediCare",
+    webapp: "https://medicare-frontend-8miz.onrender.com/",
+  },
+  
+  
+  
+  {
+    id: 5,
+    title: "DIGITAL HEROES-A Golf Performance and Charity Draw Platform",
+    description:
+      "A golf performance and charity draw platform that allows users to track their golf performance, participate in charity draws, and win prizes.",
     image: aisaasLogo,
-    tags: ["React JS", "Node.js", "AI Tools", "Image Processing", "SaaS"],
-    github: "https://github.com/anuragkashyap302/QuickAI",
-    webapp: "https://quick-ai-client-delta.vercel.app/",
+    tags: ["React JS", "Node.js", "Supabase", "Postgres", "Tailwind CSS", "Stripe"],
+    github: "hhttps://github.com/anuragkashyap302/Digital-Heroes",
+    webapp: "https://digital-heroes-anurag.vercel.app/",
   },
 ];
