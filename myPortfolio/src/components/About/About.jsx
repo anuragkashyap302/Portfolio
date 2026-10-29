@@ -34,12 +34,12 @@ const About = () => {
             </span>
           </h2>
           <p className="text-base md:text-lg text-mist mt-6 leading-relaxed max-w-xl">
-            I am a passionate full-stack developer with over 2 years of experience in building scalable web applications.
-            Skilled in both front-end and back-end development, I specialize in the MERN stack and other modern
-            technologies to create seamless user experiences and efficient solutions.
+            Full-Stack Developer with hands-on experience building MERN stack applications, focused on backend development, RESTful
+            API design, and role-based access control. Strong foundation in data structures and algorithms, database design, and
+            application security, with practical exposure to real-time systems, concurrency control, payments, and AI applications.
           </p>
           <a
-            href="https://drive.google.com/file/d/1Wk-BR9SPekK26dd3nuB0U8GFTS6-B8Cd/view?usp=sharing"
+            href="https://drive.google.com/file/d/1MmRamvtHlUFtIQhyRvmcd2LSObT2PXoN/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-3d inline-block mt-8 py-3 px-7 rounded-full text-sm font-semibold tracking-wide"
