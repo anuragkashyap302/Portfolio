@@ -163,7 +163,7 @@ export const SkillsInfo = [
     },
     {
       id: 1,
-      title: "AI-SAAS – AI-Powered Content & Image Tool",
+      title: "Sutra AI - AI SaaS Platform",
       description:
         "An AI-powered SaaS platform for creators to generate articles, blogs, and images, as well as remove backgrounds and objects. Multiple AI tools sit behind a modern React UI and a production backend.",
       image: aisaasLogo,
@@ -173,7 +173,7 @@ export const SkillsInfo = [
     },
   {
     id: 2,
-    title: "PingUp",
+    title: "OrbitX",
     description:
       "A full-stack social media platform with secure authentication, profile management, and a scalable client-server architecture. Includes real-time messaging, posts, stories, follow/unfollow, friend requests, user search, and personalized news feeds, plus optimized media storage and background job processing.",
     image: pingupLogo,
